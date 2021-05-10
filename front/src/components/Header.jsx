@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Main>
-        <Title>CoVacMap</Title>
+        <Title>COVACMAP</Title>
         <SearchIcon onClick={ChangeShowSearch} />
       </Main>
       {showSearch && (
