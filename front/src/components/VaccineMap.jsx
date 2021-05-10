@@ -85,6 +85,7 @@ const MapContainer = styled.section`
   & .OverlayContainer {
     background-color: #ffffff;
     border-radius: 1rem;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 
     & .title {
       display: flex;
