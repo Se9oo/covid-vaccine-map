@@ -3,7 +3,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import SelectLocation from './SelectLocation';
 
-const Header = () => {
+const Header = ({ onChangeMapData }) => {
   const [showSearch, setShowSearch] = useState(false);
 
   const ChangeShowSearch = useCallback(() => {
@@ -20,7 +20,7 @@ const Header = () => {
       </Main>
       {showSearch && (
         <SelectArea>
-          <SelectLocation />
+          <SelectLocation onChangeMapData={onChangeMapData} />
         </SelectArea>
       )}
     </StyledHeader>

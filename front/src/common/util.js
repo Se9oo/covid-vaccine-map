@@ -25,3 +25,11 @@ export function getSelectOptionSigungu(sido) {
 
   return result;
 }
+
+export function getMapData(sido, sigungu) {
+  const mapData = locationData.data.filter((info) => {
+    return sigungu === '' ? info.sido === sido : info.sido === sido && info.sigungu === sigungu;
+  });
+
+  return mapData;
+}
