@@ -37,7 +37,6 @@ const TestVaccineMap = ({ mapData = '' }) => {
 
       // 검색한 지역의 첫번째 예방접종 병원위치로 map 이동
       if (kakaoMap !== null && idx === 0) {
-        console.log(kakaoMap);
         kakaoMap.panTo(new kakao.maps.LatLng(location.lng, location.lat));
       }
 
@@ -111,7 +110,8 @@ const TestVaccineMap = ({ mapData = '' }) => {
 
 export default TestVaccineMap;
 
-const MapContainer = styled.section`
+const MapContainer = styled.article`
+  position: relative;
   width: 100%;
   height: 100%;
 
