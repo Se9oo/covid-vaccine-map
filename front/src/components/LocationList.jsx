@@ -23,5 +23,8 @@ const StyledList = styled.ul`
   @media ${(props) => props.theme.laptop} {
     display: block;
     width: 100%;
+    height: calc(100% - 50px - 20%);
+    padding: 1rem;
+    overflow-y: auto;
   }
 `;

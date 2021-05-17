@@ -34,10 +34,12 @@ const Header = ({ mapData, onChangeMapData, setSelectLocation }) => {
         <SearchIcon onClick={ChangeShowSearch} />
       </Main>
       {showSearch && (
-        <SelectArea>
-          <SelectLocation onChangeMapData={onChangeMapData} />
+        <>
+          <SelectArea>
+            <SelectLocation onChangeMapData={onChangeMapData} />
+          </SelectArea>
           <LocationList mapData={mapData} setSelectLocation={setSelectLocation} />
-        </SelectArea>
+        </>
       )}
     </StyledHeader>
   );
@@ -47,7 +49,13 @@ export default Header;
 
 const StyledHeader = styled.header`
   position: relative;
+  height: auto;
   z-index: 999;
+
+  @media ${(props) => props.theme.laptop} {
+    width: 390px;
+    height: 100%;
+  }
 `;
 
 const Main = styled.div`
@@ -63,7 +71,7 @@ const Main = styled.div`
   background-color: #ffffff;
 
   @media ${(props) => props.theme.laptop} {
-    width: 390px;
+    position: static;
   }
 `;
 
@@ -90,14 +98,14 @@ const SelectArea = styled.div`
   left: 0;
   display: block;
   width: 100%;
-  height: auto;
   padding: 1rem;
   background-color: #ffffff;
   z-index: 999;
 
   @media ${(props) => props.theme.laptop} {
+    position: static;
     display: block;
     width: 390px;
-    height: calc(100vh - 50px);
+    height: 20%;
   }
 `;

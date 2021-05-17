@@ -29,6 +29,12 @@ const CovidVaccineMap = () => {
 export default CovidVaccineMap;
 
 const Container = styled.div`
+  display: block;
   width: 100%;
   height: 100vh;
+
+  @media ${(props) => props.theme.laptop} {
+    display: flex;
+    aligin-items: center;
+  }
 `;
