@@ -7,6 +7,8 @@ import styled, { ThemeProvider } from 'styled-components';
 
 const CovidVaccineMap = () => {
   const [mapData, setMapData] = useState('');
+  const [selectLocation, setSelectLocation] = useState(null);
+
   const onChangeMapData = useCallback((data) => {
     setMapData(data);
   }, []);
@@ -16,8 +18,8 @@ const CovidVaccineMap = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Container>
-          <Header onChangeMapData={onChangeMapData} />
-          <VaccineMap mapData={mapData} />
+          <Header mapData={mapData} onChangeMapData={onChangeMapData} setSelectLocation={setSelectLocation} />
+          <VaccineMap mapData={mapData} selectLocation={selectLocation} />
         </Container>
       </ThemeProvider>
     </>

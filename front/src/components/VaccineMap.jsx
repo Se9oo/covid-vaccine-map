@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const { kakao } = window;
 
-const TestVaccineMap = ({ mapData = '' }) => {
+const TestVaccineMap = ({ mapData = '', selectLocation }) => {
   const [kakaoMap, setKakaoMap] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [overlays, setOverlays] = useState([]);
@@ -96,6 +96,12 @@ const TestVaccineMap = ({ mapData = '' }) => {
     });
   };
 
+  const moveLocation = (location) => {
+    if (kakaoMap !== null) {
+      kakaoMap.panTo(new kakao.maps.LatLng(location.lng, location.lat));
+    }
+  };
+
   useEffect(() => {
     createMap();
   }, []);
@@ -104,6 +110,10 @@ const TestVaccineMap = ({ mapData = '' }) => {
     clearMarkersAndOverlays();
     map && locationData.data.length && createMarkersAndOverlays();
   }, [kakaoMap, mapData]);
+
+  useEffect(() => {
+    moveLocation(selectLocation);
+  }, [selectLocation]);
 
   return <MapContainer id="map"></MapContainer>;
 };

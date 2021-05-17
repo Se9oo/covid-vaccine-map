@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import SelectLocation from './SelectLocation';
+import LocationList from './LocationList';
 import { SearchOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
-import SelectLocation from './SelectLocation';
 
-const Header = ({ onChangeMapData }) => {
+const Header = ({ mapData, onChangeMapData, setSelectLocation }) => {
   const [showSearch, setShowSearch] = useState(false);
   const ChangeShowSearch = useCallback(() => {
     setShowSearch((prev) => {
@@ -35,6 +36,7 @@ const Header = ({ onChangeMapData }) => {
       {showSearch && (
         <SelectArea>
           <SelectLocation onChangeMapData={onChangeMapData} />
+          <LocationList mapData={mapData} setSelectLocation={setSelectLocation} />
         </SelectArea>
       )}
     </StyledHeader>
@@ -45,7 +47,6 @@ export default Header;
 
 const StyledHeader = styled.header`
   position: relative;
-  width: 100%;
   z-index: 999;
 `;
 
@@ -58,11 +59,11 @@ const Main = styled.div`
   align-items: center;
   width: 100%;
   height: 50px;
+  margin: 0;
   background-color: #ffffff;
 
   @media ${(props) => props.theme.laptop} {
     width: 390px;
-    margin: 0;
   }
 `;
 
