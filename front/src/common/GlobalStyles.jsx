@@ -11,21 +11,21 @@ const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'NanumGothic';
-    src: url('/src/public/font/NanumGothicLight.otf') format('opentype');
+    src: url('/src/public/font/NanumGothicLight.woff') format('woff');
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'NanumGothic';
-    src: url('/src/public/font/NanumGothic.otf') format('opentype');
+    src: url('/src/public/font/NanumGothic.woff') format('woff');
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'NanumGothic';
-    src: url('/src/public/font/NanumGothicBold.otf') format('opentype');
+    src: url('/src/public/font/NanumGothicBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
   }
