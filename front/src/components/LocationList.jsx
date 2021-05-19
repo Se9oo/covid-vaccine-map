@@ -20,6 +20,26 @@ export default LocationList;
 const StyledList = styled.ul`
   display: none;
 
+  &::-webkit-scrollbar {
+    background-color: #fff;
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 30%;
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
   @media ${(props) => props.theme.laptop} {
     display: block;
     width: 100%;
