@@ -135,7 +135,7 @@ const MapContainer = styled.article`
   & .OverlayContainer {
     background-color: #ffffff;
     border-radius: 1rem;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
 
     & .title {
       display: flex;
