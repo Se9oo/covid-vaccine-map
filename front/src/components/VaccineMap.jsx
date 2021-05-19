@@ -4,17 +4,18 @@ import styled from 'styled-components';
 
 const { kakao } = window;
 
-const TestVaccineMap = ({ mapData = '', selectLocation }) => {
+const TestVaccineMap = ({ mapData = '', selectLocation, setSelectLocation }) => {
   const [kakaoMap, setKakaoMap] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [overlays, setOverlays] = useState([]);
+  const DEFAULT_MAP_LEVEL = 5;
 
   const createMap = () => {
     kakao.maps.load(() => {
       const mapContainer = document.getElementById('map');
       const options = {
         center: new kakao.maps.LatLng(37.567817, 127.004501),
-        level: 5,
+        level: DEFAULT_MAP_LEVEL,
       };
 
       const map = new kakao.maps.Map(mapContainer, options);
@@ -99,6 +100,9 @@ const TestVaccineMap = ({ mapData = '', selectLocation }) => {
   const moveLocation = (location) => {
     if (kakaoMap !== null) {
       kakaoMap.panTo(new kakao.maps.LatLng(location.lng, location.lat));
+      kakaoMap.setLevel(DEFAULT_MAP_LEVEL);
+      // 같은 지역을 선택하는 경우를 대비해서 state 초기화
+      setSelectLocation(null);
     }
   };
 
@@ -112,6 +116,11 @@ const TestVaccineMap = ({ mapData = '', selectLocation }) => {
   }, [kakaoMap, mapData]);
 
   useEffect(() => {
+    // state 초기화된 경우 return
+    if (selectLocation === null) {
+      return;
+    }
+
     moveLocation(selectLocation);
   }, [selectLocation]);
 

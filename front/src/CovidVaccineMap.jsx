@@ -19,7 +19,7 @@ const CovidVaccineMap = () => {
         <GlobalStyles />
         <Container>
           <Header mapData={mapData} onChangeMapData={onChangeMapData} setSelectLocation={setSelectLocation} />
-          <VaccineMap mapData={mapData} selectLocation={selectLocation} />
+          <VaccineMap mapData={mapData} selectLocation={selectLocation} setSelectLocation={setSelectLocation} />
         </Container>
       </ThemeProvider>
     </>
