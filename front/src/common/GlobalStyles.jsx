@@ -9,33 +9,12 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  @font-face {
-    font-family: 'NanumGothic';
-    src: url('/src/public/font/NanumGothicLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'NanumGothic';
-    src: url('/src/public/font/NanumGothic.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'NanumGothic';
-    src: url('/src/public/font/NanumGothicBold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-  }
-
   html {
     font-size: 10px;
   }
 
   body, input, a, ol, ul, li, button {
-    font-family: 'NanumGothic', 'Sans-serif' !important;
+    font-family: 'Apple SD Gothic','Noto Sans KR','맑은고딕','Nanum Gothic',sans-serif;
   }
 
   a {
