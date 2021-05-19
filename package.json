@@ -4,14 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve --hot"
+    "dev": "cross-env NODE_ENV=development webpack serve --hot",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d build"
   },
   "author": "park se hyeon",
   "license": "MIT",
+  "homepage": "https://se9oo.github.io/covid-vaccine-map",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "antd": "^4.15.4",
     "cross-env": "^7.0.3",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.0",

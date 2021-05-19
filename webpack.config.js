@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   name: 'Covid-Vaccine-Map',
-  mode: 'development',
+  mode: 'production',
   devtool: 'eval',
   resolve: {
     extensions: ['.js', '.jsx'],
