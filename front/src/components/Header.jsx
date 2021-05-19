@@ -106,6 +106,5 @@ const SelectArea = styled.div`
     position: static;
     display: block;
     width: 390px;
-    height: 20%;
   }
 `;
