@@ -23,5 +23,5 @@ const StyledListItem = styled.li`
 `;
 
 const Title = styled.strong`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 `;
