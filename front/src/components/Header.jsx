@@ -30,7 +30,7 @@ const Header = ({ mapData, onChangeMapData, setSelectLocation }) => {
   return (
     <StyledHeader>
       <Main>
-        <Title>COVACMAP</Title>
+        <Title>CoVacMap</Title>
         <SearchIcon onClick={ChangeShowSearch} />
       </Main>
       {showSearch && (
