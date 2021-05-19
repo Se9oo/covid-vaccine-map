@@ -54,6 +54,15 @@ const GlobalStyles = createGlobalStyle`
   input, button {
     background-color: transparent;
   }
+
+  .rc-virtual-list-scrollbar {
+      width: 4px !important;
+  }
+
+  .rc-virtual-list-scrollbar-thumb {
+    background-color: #babac0 !important;
+    border-radius: 16px;
+  }
 `;
 
 const size = {
