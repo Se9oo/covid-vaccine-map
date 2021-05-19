@@ -43,7 +43,7 @@ const StyledList = styled.ul`
   @media ${(props) => props.theme.laptop} {
     display: block;
     width: 100%;
-    height: calc(100% - 50px - 176px);
+    height: calc(100% - 50px - 180px);
     padding: 1rem;
     overflow-y: auto;
   }
