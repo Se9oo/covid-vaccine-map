@@ -8,9 +8,9 @@ const SelectLocation = ({ onChangeMapData }) => {
   // 초기 시/도 저장 배열
   const sidoArray = getSelectOptionSido();
   // 선택한 시/도
-  const [sido, setSido] = useState('');
+  const [sido, setSido] = useState(null);
   // 선택한 시/군/구
-  const [sigungu, setSigungu] = useState('');
+  const [sigungu, setSigungu] = useState(null);
   // 선택한 시/도에 해당하는 시/군/구 배열
   const [sigunguArray, setSigunguArray] = useState([]);
 
@@ -18,6 +18,8 @@ const SelectLocation = ({ onChangeMapData }) => {
   const onChangeSido = useCallback((optionValue) => {
     if (optionValue) {
       setSido(optionValue);
+      // 시/도가 바뀌면 시/군/구 값을 초기화
+      setSigungu(null);
     }
   }, []);
 
@@ -48,8 +50,14 @@ const SelectLocation = ({ onChangeMapData }) => {
 
   return (
     <>
-      <SelectBox data={sidoArray} placeholder="시/도" onChange={onChangeSido} />
-      <SelectBox data={sigunguArray} placeholder="시/군/구" onChange={onChangeSigungu} />
+      <SelectBox data={sidoArray} placeholder="시/도" onChange={onChangeSido} value={sido} setValue={setSido} />
+      <SelectBox
+        data={sigunguArray}
+        placeholder="시/군/구"
+        onChange={onChangeSigungu}
+        value={sigungu}
+        setValue={setSigungu}
+      />
       <StyledButton type="primary" onClick={onClickSearchBtn}>
         검색
       </StyledButton>

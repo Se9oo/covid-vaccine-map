@@ -4,11 +4,16 @@ import styled from 'styled-components';
 
 const { Option } = Select;
 
-const SelectBox = ({ data, placeholder, onChange }) => {
+const SelectBox = ({ data, placeholder, onChange, value, setValue }) => {
+  // select box clear
+  const onClearSelect = () => {
+    setValue(null);
+  };
+
   return (
     <>
       <StyledLabel>{placeholder}</StyledLabel>
-      <StyledSelect placeholder={placeholder} onChange={onChange}>
+      <StyledSelect placeholder={placeholder} onChange={onChange} value={value} onClear={onClearSelect} allowClear>
         {data.length !== 0
           ? data.map((value) => {
               return (
