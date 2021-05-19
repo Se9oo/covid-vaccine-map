@@ -27,9 +27,13 @@ export function getSelectOptionSigungu(sido) {
 }
 
 export function getMapData(sido, sigungu) {
-  const mapData = locationData.data.filter((info) => {
-    return sigungu === '' ? info.sido === sido : info.sido === sido && info.sigungu === sigungu;
-  });
+  // 시/도 값이 없다면 전체 조회
+  const mapData =
+    sido === null
+      ? locationData.data
+      : locationData.data.filter((info) => {
+          return sigungu === null ? info.sido === sido : info.sido === sido && info.sigungu === sigungu;
+        });
 
   return mapData;
 }

@@ -31,11 +31,6 @@ const SelectLocation = ({ onChangeMapData }) => {
   }, []);
 
   const onClickSearchBtn = useCallback(() => {
-    if (!sido) {
-      alert('시/도를 선택하세요.');
-      return;
-    }
-
     const mapData = getMapData(sido, sigungu);
 
     onChangeMapData(mapData);
