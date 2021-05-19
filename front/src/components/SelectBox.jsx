@@ -7,6 +7,9 @@ const { Option } = Select;
 const SelectBox = ({ data, placeholder, onChange, value, setValue }) => {
   // select box clear
   const onClearSelect = () => {
+    if (value === null) {
+      return;
+    }
     setValue(null);
   };
 
