@@ -51,11 +51,6 @@ const StyledHeader = styled.header`
   position: relative;
   height: auto;
   z-index: 999;
-
-  @media ${(props) => props.theme.laptop} {
-    width: 390px;
-    height: 100%;
-  }
 `;
 
 const Main = styled.div`
